@@ -1,0 +1,180 @@
+@charset "utf-8";
+@mixin keyframes($name){
+    /*
+    @keyframes #{$name} {
+        @content;
+    }
+    */
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+}
+
+
+
+@mixin prefix($name,$value){
+    /*
+    #{$name}:$value;
+    */
+    -webkit-#{$name}:$value;
+}
+
+
+@mixin display($value) {
+    display:-webkit-#{$value};
+}
+
+
+// 居中 $x = 水平， $y = 垂直
+@mixin center($x: center, $y: center, $xx: center, $yy: center) {
+    @include display(flex); 
+    @include display(box);
+    justify-content: $x; /* flex-start */
+    align-items: $y;
+    @include prefix(box-pack, $xx);  /* start */
+    @include prefix(box-align, $yy);
+}
+
+
+// 自定义滚动条样式
+
+%common-bar {
+    
+    &::-webkit-scrollbar {
+        width: 3px;  
+        height: 16px;  
+        border-radius: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius:6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 6px;  
+        background: #20A0FF;
+    }
+}
+
+// 侧边栏鼠标滑过公共样式
+%common {
+    @include prefix(transition, background .05s linear);
+    
+    &:hover {
+        background: #d1dbe5;
+    }
+}
+
+// 留言板操作按钮
+%common-operation {
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    @include prefix(user-select, none);
+}
+
+
+
+
+
+// Home 头部高度。 方便复用计算
+$titleHeight: 50px;
+
+// padding-bottom  + 头高度  这样就不会把内容挤下去
+$paddingBottom: $titleHeight + 30;
+
+// 侧边栏宽度
+$sidebarWidth: 160px;
+
+$ttf: '../fonts/alibaba/iconfont.ttf';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
